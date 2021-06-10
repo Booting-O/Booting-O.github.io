@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test, Hexo">
+    <meta name="keywords" content="Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test | Hexo</title>
+    <title>Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -464,7 +464,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="探索2012欧洲世界杯数据"><a href="#探索2012欧洲世界杯数据" class="headerlink" title="探索2012欧洲世界杯数据"></a>探索2012欧洲世界杯数据</h2><p>首先导入Pandas库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+
+<p>（1）. 将数据集存入一个名为euro12的数据框内；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chipo = pd.read_csv(<span class="string">&#x27;chipotle.tsv&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>（2）. 只选取Goals这一列；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">euro12.Goals</span><br></pre></td></tr></table></figure>
+
+<p>（3）. 有多少球队参与了2012欧洲杯？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">euro12.Team.nunique()</span><br></pre></td></tr></table></figure>
+
+<p>（4）. 该数据集中一共有多少列(columns)?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">euro12.shape[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p>（5）. 将数据集中的列Team, Yellow Cards和Red Cards单独存为一个名叫discipline的数据框；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">discipline = euro12[[<span class="string">&#x27;Team&#x27;</span>,<span class="string">&#x27;Yellow Cards&#x27;</span>,<span class="string">&#x27;Red Cards&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>（6）. 对数据框discipline按照先Red Cards再Yellow Cards进行排序；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">discipline.sort_values(by=[<span class="string">&#x27;Red Cards&#x27;</span>,<span class="string">&#x27;Yellow Cards&#x27;</span>],ascending = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>（7）. 计算每个球队拿到的黄牌数的平均值；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">euro12[<span class="string">&#x27;Yellow Cards&#x27;</span>].mean()</span><br></pre></td></tr></table></figure>
+<p>（8）. 找到进球数Goals超过6的球队数据；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">euro12[euro12.Goals&gt;<span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+
+<p>（9）. 选取以字母G开头的球队数据；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">euro12[euro12.Team.<span class="built_in">str</span>.startswith(<span class="string">&#x27;G&#x27;</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>（10）. 选取前7列；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">euro12.iloc[:,<span class="number">0</span>:<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+
+<p>（11）. 选取除了最后3列之外的全部列；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">euro12.iloc[:,<span class="number">0</span>:-<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<p>（12）. 找到英格兰(England)、意大利(Italy)和俄罗斯(Russia)的射正率(ShootingAccuracy)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">euro12.loc[euro12[<span class="string">&#x27;Team&#x27;</span>].isin([<span class="string">&#x27;England&#x27;</span>,<span class="string">&#x27;Italy&#x27;</span>,<span class="string">&#x27;Russia&#x27;</span>]),</span><br><span class="line">[<span class="string">&#x27;Team&#x27;</span>,<span class="string">&#x27;Shooting Accuracy&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>数据表Github链接：<a target="_blank" rel="noopener" href="https://github.com/Booting-O/Pandas-Practice.git">https://github.com/Booting-O/Pandas-Practice.git</a></p>
+
                 
             </div>
             <hr/>
@@ -490,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/06/10/test/">http://example.com/2021/06/10/test/</a>
+                    <a href="http://example.com/2021/06/10/Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%88%9D%E5%AD%A62--%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4%E4%B8%8E%E6%8E%92%E5%BA%8F/">http://example.com/2021/06/10/Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%88%9D%E5%AD%A62--%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4%E4%B8%8E%E6%8E%92%E5%BA%8F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -700,13 +739,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2021/06/10/test/">
+                <a href="/2021/06/10/Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%88%9D%E5%AD%A62--%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4%E4%B8%8E%E6%8E%92%E5%BA%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -735,16 +774,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/10/test/">
+                <a href="/2021/06/10/Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%88%9D%E5%AD%A61--%E5%BC%80%E5%A7%8B%E4%BA%86%E8%A7%A3%E6%95%B0%E6%8D%AE/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -765,7 +804,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
