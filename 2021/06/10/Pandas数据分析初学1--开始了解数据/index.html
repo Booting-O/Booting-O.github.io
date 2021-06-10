@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -57,7 +57,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -68,7 +68,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -79,7 +79,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -90,7 +90,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -101,7 +101,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -112,7 +112,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -123,14 +123,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -193,7 +193,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -204,7 +204,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -215,7 +215,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -226,7 +226,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -430,7 +430,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -442,7 +442,7 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2021-06-10
                 </div>
                 
@@ -466,40 +466,50 @@
             <div id="articleContent">
                 <h2 id="探索Chipotle快餐数据"><a href="#探索Chipotle快餐数据" class="headerlink" title="探索Chipotle快餐数据"></a>探索Chipotle快餐数据</h2><p>作为一个Pandas初学者，今天用这道题目练手，分享出来</p>
 <p>首先</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impotr pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">impotr pandas <span class="token keyword">as</span> pd
+</code></pre>
 <p>（1）将数据集存入一个名为chipo的数据框内</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iris_filename = <span class="string">&#x27;chipotle.csv&#x27;</span></span><br><span class="line">chipo = pd.read_csv(iris_filename, sep=<span class="string">&#x27;,&#x27;</span>, decimal=<span class="string">&#x27;.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python">iris_filename <span class="token operator">=</span> <span class="token string">'chipotle.csv'</span>
+chipo <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>iris_filename<span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">','</span><span class="token punctuation">,</span> decimal<span class="token operator">=</span><span class="token string">'.'</span><span class="token punctuation">)</span>
+</code></pre>
 <p>（2）查看前10行内容</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chipo.head(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python">chipo<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+</code></pre>
 <p>（3）数据集中有多少个列(columns)？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chipo.shape[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python">chipo<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+</code></pre>
 <p>（4）打印出全部的列名称</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(chipo)</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">list<span class="token punctuation">(</span>chipo<span class="token punctuation">)</span>
+</code></pre>
 <p>（5）数据集的索引是怎样的？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chipo.index</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">chipo<span class="token punctuation">.</span>index
+</code></pre>
 <p>（6）被下单数最多商品(item)是什么?</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c = chipo.groupby(<span class="string">&#x27;item_name&#x27;</span>)</span><br><span class="line">c = c.<span class="built_in">sum</span>()</span><br><span class="line">c = c.sort_values([<span class="string">&#x27;quantity&#x27;</span>],ascending = <span class="literal">False</span>)</span><br><span class="line">c.head(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">c <span class="token operator">=</span> chipo<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'item_name'</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> c<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> c<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'quantity'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>ascending <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+c<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre>
 <p>（7）在item_name这一列中，一共有多少种商品被下单？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chipo[<span class="string">&#x27;item_name&#x27;</span>].unique()</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">chipo<span class="token punctuation">[</span><span class="token string">'item_name'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>unique<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
 <p>（8）一共有多少个商品被下单？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chipo[<span class="string">&#x27;quantity&#x27;</span>].<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">chipo<span class="token punctuation">[</span><span class="token string">'quantity'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
 <p>（9）将item_price转换为浮点数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chipo[<span class="string">&#x27;item_price&#x27;</span>] = chipo[<span class="string">&#x27;item_price&#x27;</span>].apply(<span class="keyword">lambda</span> x: <span class="built_in">float</span>(x[<span class="number">1</span>:]))</span><br><span class="line">chipo.item_price.dtype<span class="comment">#打印一下类型是否成功转化</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">chipo<span class="token punctuation">[</span><span class="token string">'item_price'</span><span class="token punctuation">]</span> <span class="token operator">=</span> chipo<span class="token punctuation">[</span><span class="token string">'item_price'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> float<span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+chipo<span class="token punctuation">.</span>item_price<span class="token punctuation">.</span>dtype<span class="token comment" spellcheck="true">#打印一下类型是否成功转化</span>
+</code></pre>
 <p>（10） 在该数据集对应的时期内，收入(revenue)是多少？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(chipo[<span class="string">&#x27;quantity&#x27;</span>] * chipo[<span class="string">&#x27;item_price&#x27;</span>]).<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python"><span class="token punctuation">(</span>chipo<span class="token punctuation">[</span><span class="token string">'quantity'</span><span class="token punctuation">]</span> <span class="token operator">*</span> chipo<span class="token punctuation">[</span><span class="token string">'item_price'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
 <p>（11）在该数据集对应的时期内，一共有多少订单？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chipo[<span class="string">&#x27;order_id&#x27;</span>].nunique()</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">chipo<span class="token punctuation">[</span><span class="token string">'order_id'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>nunique<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
 <p>（12）每一单(order)对应的平均总价是多少？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chipo[<span class="string">&#x27;item_price_sum&#x27;</span>] = chipo[<span class="string">&#x27;quantity&#x27;</span>] * chipo[<span class="string">&#x27;item_price&#x27;</span>]</span><br><span class="line">(chipo[[<span class="string">&#x27;order_id&#x27;</span>,<span class="string">&#x27;item_price_sum&#x27;</span>]].groupby(by=[<span class="string">&#x27;order_id&#x27;</span>]).<span class="built_in">sum</span>()).mean()</span><br></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python">chipo<span class="token punctuation">[</span><span class="token string">'item_price_sum'</span><span class="token punctuation">]</span> <span class="token operator">=</span> chipo<span class="token punctuation">[</span><span class="token string">'quantity'</span><span class="token punctuation">]</span> <span class="token operator">*</span> chipo<span class="token punctuation">[</span><span class="token string">'item_price'</span><span class="token punctuation">]</span>
+<span class="token punctuation">(</span>chipo<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'order_id'</span><span class="token punctuation">,</span><span class="token string">'item_price_sum'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'order_id'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
 <p>数据表Github链接：<a target="_blank" rel="noopener" href="https://github.com/Booting-O/Pandas-Practice.git">https://github.com/Booting-O/Pandas-Practice.git</a></p>
 
                 
@@ -513,17 +523,17 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">John Doe</a>
+                    <a href="/about" rel="external nofollow noreferrer">Booting</a>
                 </span>
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -533,14 +543,14 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint polocy. If reproduced, please indicate source
-                    <a href="/about" target="_blank">John Doe</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Booting</a>
                     !
                 </span>
             </div>
@@ -549,7 +559,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -564,7 +574,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -734,7 +744,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2021/06/10/Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%88%9D%E5%AD%A62--%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4%E4%B8%8E%E6%8E%92%E5%BA%8F/">
                     <div class="card-image">
@@ -758,7 +768,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            John Doe
+                            Booting
                             
                         </span>
                     </div>
@@ -770,7 +780,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2021/06/10/Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%88%9D%E5%AD%A61--%E5%BC%80%E5%A7%8B%E4%BA%86%E8%A7%A3%E6%95%B0%E6%8D%AE/">
@@ -795,7 +805,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            John Doe
+                            Booting
                             
                         </span>
                     </div>
@@ -833,7 +843,7 @@
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -994,7 +1004,7 @@
                 <span id="year">2019-2021</span>
             
             <span id="year">2019</span>
-            <a href="/about" target="_blank">John Doe</a>
+            <a href="/about" target="_blank">Booting</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1062,8 +1072,8 @@
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
